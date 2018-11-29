@@ -30,7 +30,7 @@ export default {
   a {
     display: flex;
     align-items: center;
-    color: $white;
+    color: $basic-orange;
     opacity: 0.4;
     transition: 0.25s ease-in-out;
 

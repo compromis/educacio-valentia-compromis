@@ -59,8 +59,8 @@ export default {
 .footer {
   position: relative;
   z-index: 10;
-  background: $background-color;
-  color: $white;
+  background: $light-gray;
+  color: $text-color;
   padding: 3rem 1.5rem;
 
   .container {
@@ -81,7 +81,7 @@ export default {
   }
 
   strong {
-    color: $white;
+    color: $text-color;
   }
 
   hr {
@@ -89,7 +89,6 @@ export default {
   }
 
   &__logo {
-    filter: brightness(350%) contrast(350%);
     height: 30px;
     margin-left: 5px;
     vertical-align: middle;
@@ -102,7 +101,6 @@ export default {
     }
 
     &__twitter {
-      filter: grayscale(30%);
       border: none;
       overflow: hidden;
       width: 300px;
@@ -111,7 +109,6 @@ export default {
     }
 
     &__facebook {
-      filter: grayscale(30%);
       border: none;
       overflow: hidden;
       height: 65px;

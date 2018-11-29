@@ -24,7 +24,7 @@ export default {
 .content-block {
   position: relative;
   z-index: 1;
-  background-color: $overlay;
+  background-color: $background-color;
   min-height: 100vh;
   display: flex;
   align-items: center;

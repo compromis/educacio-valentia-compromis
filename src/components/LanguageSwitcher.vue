@@ -1,10 +1,10 @@
 <template>
   <div class="language-switcher tabs is-toggle">
     <ul>
-      <li :class="{ 'is-active': $i18n.locale == 'ca' }">
+      <li :class="{ 'is-active': $i18n.locale === 'ca' }">
         <a href="#" @click.prevent="switchLanguage('ca')">Valencià</a>
       </li>
-      <li :class="{ 'is-active': $i18n.locale == 'es' }">
+      <li :class="{ 'is-active': $i18n.locale === 'es' }">
         <a href="#" @click.prevent="switchLanguage('es')">Castellano</a>
       </li>
     </ul>
@@ -29,22 +29,25 @@ export default {
 
 .language-switcher {
   a {
-    background: $button-background;
-    color: $white;
+    background: $white;
+    color: $text-color;
     padding: 0.25rem 1rem;
 
     &:hover {
-      background: $campaign-color;
-      border-color: $campaign-color;
-      color: $text-color;
+      background: $light-gray;
     }
   }
 
   li.is-active {
     a {
-      background: $white;
-      border-color: $white;
-      color: $text-color;
+      background: $campaign-color;
+      border-color: darken($campaign-color, 5%);
+      color: $white;
+
+      &:hover {
+        background: darken($campaign-color, 5%);
+        border-color: darken($campaign-color, 10%);
+      }
     }
   }
 }
