@@ -1,0 +1,52 @@
+html,
+body {
+  font-family: $font-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+  font-size: 100%;
+  background-color: $background-color;
+}
+
+body {
+  background-color: $background-color;
+
+  &:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center 50px;
+  }
+}
+
+a {
+  color: $basic-orange;
+
+  &:hover {
+    color: $orange-end;
+  }
+}
+
+a.button.is-large {
+  background: transparent;
+  border: 2px $white solid;
+  border-radius: 4rem;
+  color: $white;
+  padding: 0.25rem 2rem;
+  transition: 0.25s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background: $white;
+    color: $overlay;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
