@@ -1,5 +1,5 @@
 <template>
-  <content-block current="two" next="three">
+  <content-block current="two" next="three" class="block-two">
     <template slot="graphic">
       <img svg-inline src="../../assets/blocks/block-two.svg" alt="" />
     </template>
@@ -22,3 +22,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '../../scss/variables';
+
+@media (max-height: 900px) {
+  .block.block-two {
+    .block__graphic {
+      max-width: 300px;
+    }
+  }
+}
+</style>

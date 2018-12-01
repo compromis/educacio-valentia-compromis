@@ -46,7 +46,7 @@ export default {
     height: 93vh;
     overflow: hidden;
     max-width: $block-width;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     margin: 0 auto;
   }
 
@@ -121,7 +121,7 @@ export default {
   }
 }
 
-@media (max-height: 550px) {
+@media (max-width: $mobile-breakpoint) {
   .block {
     &__container {
       height: auto;
@@ -134,7 +134,23 @@ export default {
     }
 
     &__next {
-      margin-top: 2rem;
+      display: none;
+    }
+  }
+}
+
+@media (min-height: 550px) and (max-height: 650px) {
+  .block {
+    &__graphic {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (min-height: 650px) and (max-height: 850px) {
+  .block {
+    &__graphic {
+      max-width: 400px;
     }
   }
 }
