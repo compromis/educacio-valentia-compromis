@@ -24,7 +24,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-prerender-spa": "^1.0.2",
-    "vue-svg-loader": "^0.10.0",
+    "vue-svg-inline-loader": "^1.2.4",
     "vue-template-compiler": "^2.5.17"
   }
 }

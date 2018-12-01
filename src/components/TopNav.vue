@@ -6,7 +6,7 @@
       </a>
     </div>
 
-    <div class="top-nav__title">
+    <div class="top-nav__title is-hidden-mobile">
       Valentia · Educació · Compromís
     </div>
 

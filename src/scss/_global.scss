@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
-  font-size: 100%;
+  font-size: 90%;
   background-color: $light-gray;
 }
 
@@ -49,21 +49,4 @@ a.button.is-large {
   &:active {
     transform: translateY(2px);
   }
-}
-
-/* Scissors */
-.st0 { 
-  fill: #EB4E2B;
-}
-.st1 { 
-  fill: #616264;
-}
-.st2 { 
-  fill: none;
-  stroke: #616264;
-  stroke-width: 6;
-  stroke-miterlimit: 10;
-}
-.st3{
-  fill:#FFFFFF;
 }

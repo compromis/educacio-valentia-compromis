@@ -1,61 +1,63 @@
 <template>
-  <section class="content-block">
-    <div class="content-block__overlay"></div>
-    <slot name="custom-background"></slot>
+  <section class="block" :id="'block-' + current">
     <div class="container">
-      <div class="content-block__container">
-        <h2 class="content-block__title" v-animate="'slide-up'"><slot name="header"></slot></h2>
-
-        <slot></slot>
+      <div class="block__container">
+        <div class="block__graphic" v-animate="'slide-up'">
+          <slot name="graphic"></slot>
+        </div>
+        <div class="block__text" v-animate="'slide-up'">
+          <slot></slot>
+        </div>
+        <div v-if="next" class="block__next" v-animate="'slide-up'">
+          <next-arrow :to="'block-' + next" />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import NextArrow from './buttons/NextArrow.vue'
+
 export default {
-  name: 'content-block'
+  name: 'content-block',
+
+  components: {
+    NextArrow
+  },
+
+  props: {
+    current: String,
+    next: String
+  }
 }
 </script>
 
 <style scoped lang="scss">
 @import '../scss/variables';
 
-.content-block {
-  position: relative;
-  z-index: 1;
-  background-color: $background-color;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    background-color: $overlay;
-  }
+.block {
+  background-color: $white;
+  margin-bottom: 0;
+  border-top: 4px $light-gray dashed;
 
   &__container {
-    position: relative;
-    z-index: 10;
-    line-height: 1.75;
     max-width: $block-width;
-    padding: 8rem 1rem;
+    padding: 4rem 1rem;
     margin: 0 auto;
-    text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   }
 
-  &__title {
-    font-size: 2.2rem;
+  &__graphic {
+    width: 90%;
+    margin: 0 auto 1rem auto;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 2rem;
     margin-bottom: 2rem;
-    font-weight: bold;
+    color: $basic-orange;
+    line-height: 1.25;
   }
 
   p {

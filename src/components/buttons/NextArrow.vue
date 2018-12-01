@@ -1,21 +1,14 @@
 <template>
   <div class="next-arrow">
     <a :href="'#' + to" v-smooth-scroll="{ offset: -50 }">
-      <ArrowIcon class="next-arrow__svg" />
-      <span class="next-arrow__text"><slot></slot></span>
+      <img svg-inline src="../../assets/arrow.svg" class="next-arrow__svg" />
     </a>
   </div>
 </template>
 
 <script>
-import ArrowIcon from '../../assets/arrow.svg'
-
 export default {
   name: 'next-arrow',
-
-  components: {
-    ArrowIcon
-  },
 
   props: {
     to: String
@@ -27,9 +20,10 @@ export default {
 @import '../../scss/variables';
 
 .next-arrow {
+  text-align: center;
+
   a {
-    display: flex;
-    align-items: center;
+    display: block;
     color: $basic-orange;
     opacity: 0.4;
     transition: 0.25s ease-in-out;
