@@ -1,54 +1,79 @@
 <template>
-  <section id="intro">
-    <div class="intro-block">
-      <div class="container">
-        <h1>
-          <span>educació</span>
-          <span>valentia</span>
-          <span>compromís</span>
-        </h1>
+  <content-block current="intro" next="one" class="intro-block">
+    <template slot="graphic">
+      <h1>
+        <span>educació</span>
+        <span>valentia</span>
+        <span>compromís</span>
+      </h1>
+      <language-switcher />
+    </template>
 
-        <language-switcher />
-
-        <div>
-          L’educació és la millor eina per construir una societat més justa i inclusiva. Hem de formar una ciutadania lliure, crítica i culta. Aquest és el model educatiu del Govern del Botànic i de Compromís: millorar la qualitat educativa per corregir les desigualtats, no per reproduir-les. El repte és difícil, però estem avançant molt i seguirem fent-ho amb valentia.
-        </div>
-
-        <next-arrow to="que-es" v-animate="'slide-up'">
-          {{ $t('sections.whatisit') }}
-        </next-arrow>
-      </div>
-    </div>
-  </section>
+    <p>
+      L’educació és la millor eina per construir una societat més justa i inclusiva. Hem de formar una ciutadania lliure, crítica i culta. Aquest és el model educatiu del Govern del Botànic i de Compromís: millorar la qualitat educativa per corregir les desigualtats, no per reproduir-les. El repte és difícil, però estem avançant molt i seguirem fent-ho amb valentia.
+    </p>
+  </content-block>
 </template>
 
 <script>
+import ContentBlock from '../ContentBlock.vue'
 import LanguageSwitcher from '../LanguageSwitcher.vue'
-import NextArrow from '../buttons/NextArrow.vue'
 
 export default {
   name: 'intro-block',
 
   components: {
-    LanguageSwitcher,
-    NextArrow
+    ContentBlock,
+    LanguageSwitcher
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../../scss/variables';
 
-.intro-block {
-  padding: 3rem 1rem;
+.block.intro-block {
+  border-top: 0;
+
+  .container {
+    display: flex;
+    align-items: flex-end;
+    min-height: 93vh;
+  }
+  .block__container {
+    height: auto;
+  }
 
   h1 {
     color: $basic-orange;
-    font-size: 4rem;
+    font-size: 3.5rem;
     letter-spacing: -2px;
+    line-height: 1.2;
 
     span {
       display: block;
+    }
+  }
+
+  .language-switcher {
+    margin-top: 1rem;
+  }
+
+  .block__graphic,
+  .block__text,
+  .block__next {
+    position: static;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .block__text {
+    font-size: 1rem;
+    margin: 2rem auto;
+
+    p {
+      text-align: left;
+      max-width: 100%;
     }
   }
 }

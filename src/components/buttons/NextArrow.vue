@@ -1,6 +1,6 @@
 <template>
   <div class="next-arrow">
-    <a :href="'#' + to" v-smooth-scroll="{ offset: -50 }">
+    <a :href="'#' + to" v-smooth-scroll="{ offset: -45 }">
       <img svg-inline src="../../assets/arrow.svg" class="next-arrow__svg" />
     </a>
   </div>
@@ -39,8 +39,8 @@ export default {
   }
 
   &__svg {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
   &__text {

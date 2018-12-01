@@ -3,7 +3,7 @@
     <div class="container">
       <div class="block__container">
         <div class="block__graphic" v-animate="'slide-up'">
-          <slot name="graphic"></slot>
+          <div class="block__graphic__adjuster"><slot name="graphic"></slot></div>
         </div>
         <div class="block__text" v-animate="'slide-up'">
           <slot></slot>
@@ -42,27 +42,56 @@ export default {
   border-top: 4px $light-gray dashed;
 
   &__container {
+    position: relative;
+    height: 93vh;
+    overflow: hidden;
     max-width: $block-width;
     padding: 4rem 1rem;
     margin: 0 auto;
   }
 
   &__graphic {
-    width: 90%;
+    position: absolute;
+    display: flex;
+    top: 2rem;
+    bottom: 10rem;
+    left: 2rem;
+    right: 2rem;
     margin: 0 auto 1rem auto;
+    align-items: flex-end;
+
+    &__adjuster {
+      width: 100%;
+    }
+
+    svg {
+      max-height: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
 
   &__text {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    right: 2rem;
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 2rem;
     color: $basic-orange;
     line-height: 1.25;
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
   }
 
-  p {
-    font-size: 1.45rem;
-    margin-bottom: 2rem;
+  &__next {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
   }
 
   a {
@@ -74,20 +103,38 @@ export default {
   }
 }
 
-@media (max-width: $mobile-breakpoint) {
-  .content-block {
-    padding: 0 5rem 0 1rem;
+@media (min-width: $mobile-breakpoint) {
+  .block {
+    &__graphic {
+      max-width: 500px;
+    }
 
+    &__text {
+      bottom: 5.5rem;
+
+      p {
+        font-size: 1.45rem;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-height: 550px) {
+  .block {
     &__container {
-      padding: 5rem 1rem;
+      height: auto;
     }
 
-    &__title {
-      line-height: 1.25;
+    &__graphic,
+    &__text,
+    &__next {
+      position: static;
     }
 
-    p {
-      font-size: 1.25rem;
+    &__next {
+      margin-top: 2rem;
     }
   }
 }
