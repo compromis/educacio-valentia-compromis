@@ -40,7 +40,6 @@ export default {
 @import '../../scss/variables';
 
 .intro-block {
-  background: $background-color;
   padding: 3rem 1rem;
 
   h1 {
