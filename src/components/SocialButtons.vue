@@ -15,7 +15,7 @@
         </p>
         <p class="control">
           <iframe
-            :src="'https://platform.twitter.com/widgets/tweet_button.html?size=l&url=' + encodeURIComponent(shareUrl) + '&via=' + twitterAccount + '&related=' + twitterAccount + '&text=' + encodeURIComponent(tweet) + '&lang=' + $t('global.twLocale')"
+            :src="'https://platform.twitter.com/widgets/tweet_button.html?size=l&url=' + encodeURIComponent(tweetableUrl) + '&via=' + twitterAccount + '&related=' + twitterAccount + '&text=' + encodeURIComponent(tweet) + '&lang=' + $t('global.twLocale')"
             class="header__social-plugins__twitter"
             width="140"
             height="30"
@@ -35,9 +35,10 @@ export default {
 
   data () {
     return {
-      shareUrl: 'https://compromis.net/castor',
+      shareUrl: 'https://compromis.net/evc',
+      tweetableUrl: 'http://educacio.valentia.compromis.net',
       fbApp: '252515324782640',
-      tweet: 'Castor',
+      tweet: 'Educació, valentia, compromís',
       twitterAccount: 'compromis'
     }
   }
