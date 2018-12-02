@@ -26,6 +26,5 @@ const i18n = new VueI18n({
 
 new Vue({
   i18n,
-  render: h => h(App),
-  mounted: () => document.dispatchEvent(new Event('x-app-rendered'))
+  render: h => h(App)
 }).$mount('#app')
