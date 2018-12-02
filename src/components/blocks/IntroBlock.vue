@@ -2,9 +2,18 @@
   <content-block current="intro" next="one" class="intro-block">
     <template slot="graphic">
       <h1>
-        <span>{{ $t('global.education') }}</span>
-        <span>{{ $t('global.bravery') }}</span>
-        <span>{{ $t('global.committment') }}</span>
+        <span class="education">
+          <img src="../../assets/education.svg" class="icon" alt="" />
+          {{ $t('global.education') }}
+        </span>
+        <span class="bravery">
+          <img src="../../assets/bravery.svg" class="icon" alt="" />
+          {{ $t('global.bravery') }}
+        </span>
+        <span class="committment">
+          <img src="../../assets/committment.svg" class="icon" alt="" />
+          {{ $t('global.committment') }}
+        </span>
       </h1>
       <language-switcher />
     </template>
@@ -40,6 +49,7 @@ export default {
   }
   .block__container {
     height: auto;
+    overflow: visible;
   }
 
   h1 {
@@ -49,7 +59,30 @@ export default {
     line-height: 1.2;
 
     span {
+      position: relative;
       display: block;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      left: -80px;
+      top: -5px;
+    }
+
+    .education {
+      animation: blink .75s;
+    }
+
+    .bravery {
+      animation: blink .75s;
+      animation-delay: .75s;
+    }
+
+    .committment {
+      animation: blink .75s;
+      animation-delay: 1.5s;
     }
   }
 
