@@ -4,10 +4,7 @@
       <img svg-inline src="../../assets/blocks/block-three.svg" alt="" />
     </template>
 
-    <p>
-      1.183 euros més d’inversió per
-      alumne/a que en 2014.
-    </p>
+    <p>{{ $t('blocks.three') }}</p>
   </content-block>
 </template>
 

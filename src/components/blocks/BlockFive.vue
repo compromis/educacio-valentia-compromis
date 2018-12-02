@@ -1,14 +1,15 @@
 <template>
   <content-block current="five" next="six">
     <template slot="graphic">
-      <img svg-inline src="../../assets/blocks/block-five.svg" alt="" />
+      <div v-if="$i18n.locale === 'es'">
+        <img svg-inline src="../../assets/blocks/cas/block-five.svg" alt="" />
+      </div>
+      <div v-else>
+        <img svg-inline src="../../assets/blocks/block-five.svg" alt="" />
+      </div>
     </template>
 
-    <p>
-      Avancem cap a la universalització
-      de l’ensenyament 0-3 anys. Més de
-      14.400 places gratuïtes.
-    </p>
+    <p>{{ $t('blocks.five') }}</p>
   </content-block>
 </template>
 

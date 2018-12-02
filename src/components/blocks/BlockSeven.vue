@@ -1,13 +1,15 @@
 <template>
   <content-block current="seven" next="eight">
     <template slot="graphic">
-      <img svg-inline src="../../assets/blocks/block-seven.svg" alt="" />
+      <div v-if="$i18n.locale === 'es'">
+        <img svg-inline src="../../assets/blocks/cas/block-seven.svg" alt="" />
+      </div>
+      <div v-else>
+        <img svg-inline src="../../assets/blocks/block-seven.svg" alt="" />
+      </div>
     </template>
 
-    <p>
-      Aposta per la innovació educativa: vora 6 milions
-      d’euros en ajudes a projectes d’innovació.
-    </p>
+    <p>{{ $t('blocks.seven') }}</p>
   </content-block>
 </template>
 

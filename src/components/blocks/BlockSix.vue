@@ -4,10 +4,7 @@
       <img svg-inline src="../../assets/blocks/block-six.svg" alt="" />
     </template>
 
-    <p>
-      Menys alumnes per aula. Hem abaixat
-      entre 5 i 7 alumnes la ràtio màxima.
-    </p>
+    <p>{{ $t('blocks.six') }}</p>
   </content-block>
 </template>
 

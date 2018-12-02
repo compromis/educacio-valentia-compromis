@@ -1,13 +1,15 @@
 <template>
   <content-block current="two" next="three" class="block-two">
     <template slot="graphic">
-      <img svg-inline src="../../assets/blocks/block-two.svg" alt="" />
+      <div v-if="$i18n.locale === 'es'">
+        <img svg-inline src="../../assets/blocks/cas/block-two.svg" alt="" />
+      </div>
+      <div v-else>
+        <img svg-inline src="../../assets/blocks/block-two.svg" alt="" />
+      </div>
     </template>
 
-    <p>
-      Més professorat treballant per una millor
-      educació: 6.051 docents més que amb el PP.
-    </p>
+    <p>{{ $t('blocks.two') }}</p>
   </content-block>
 </template>
 

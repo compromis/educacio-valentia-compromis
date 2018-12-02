@@ -4,11 +4,7 @@
       <img svg-inline src="../../assets/blocks/block-one.svg" alt="" />
     </template>
 
-    <p>
-      Hem acabat amb les retallades
-      en educació del PP. Estem recuperant
-      la dignitat de l’educació pública.
-    </p>
+    <p>{{ $t('blocks.one') }}</p>
   </content-block>
 </template>
 

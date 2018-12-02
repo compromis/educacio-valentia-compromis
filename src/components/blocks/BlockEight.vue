@@ -1,13 +1,15 @@
 <template>
   <content-block current="eight">
     <template slot="graphic">
-      <img svg-inline src="../../assets/blocks/block-eight.svg" alt="" />
+      <div v-if="$i18n.locale === 'es'">
+        <img svg-inline src="../../assets/blocks/cas/block-eight.svg" alt="" />
+      </div>
+      <div v-else>
+        <img svg-inline src="../../assets/blocks/block-eight.svg" alt="" />
+      </div>
     </template>
 
-    <p>
-      Invertim 395 milions d’euros per a la
-      millora i construcció de centres educatius.
-    </p>
+    <p>{{ $t('blocks.eight') }}</p>
   </content-block>
 </template>
 

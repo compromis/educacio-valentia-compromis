@@ -1,14 +1,15 @@
 <template>
   <content-block current="four" next="five">
     <template slot="graphic">
-      <img svg-inline src="../../assets/blocks/block-four.svg" alt="" />
+      <div v-if="$i18n.locale === 'es'">
+        <img svg-inline src="../../assets/blocks/cas/block-four.svg" alt="" />
+      </div>
+      <div v-else>
+        <img svg-inline src="../../assets/blocks/block-four.svg" alt="" />
+      </div>
     </template>
 
-    <p>
-      705 euros d’estalvi familiar amb
-      renda habitual per fill/a en la tornada a l’escola
-      gràcies a Xarxa Llibres i les beques de menjador.
-    </p>
+    <p>{{ $t('blocks.four') }}</p>
   </content-block>
 </template>
 

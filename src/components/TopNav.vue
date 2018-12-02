@@ -7,7 +7,7 @@
     </div>
 
     <div class="top-nav__title">
-      valentia · educació · compromís
+      {{ $t('global.education') }} · {{ $t('global.bravery') }} · {{ $t('global.committment') }}
     </div>
 
     <SocialButtons />

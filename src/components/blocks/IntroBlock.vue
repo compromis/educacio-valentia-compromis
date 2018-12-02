@@ -2,16 +2,14 @@
   <content-block current="intro" next="one" class="intro-block">
     <template slot="graphic">
       <h1>
-        <span>educació</span>
-        <span>valentia</span>
-        <span>compromís</span>
+        <span>{{ $t('global.education') }}</span>
+        <span>{{ $t('global.bravery') }}</span>
+        <span>{{ $t('global.committment') }}</span>
       </h1>
       <language-switcher />
     </template>
 
-    <p>
-      L’educació és la millor eina per construir una societat més justa i inclusiva. Hem de formar una ciutadania lliure, crítica i culta. Aquest és el model educatiu del Govern del Botànic i de Compromís: millorar la qualitat educativa per corregir les desigualtats, no per reproduir-les. El repte és difícil, però estem avançant molt i seguirem fent-ho amb valentia.
-    </p>
+    <p>{{ $t('blocks.intro') }}</p>
   </content-block>
 </template>
 
